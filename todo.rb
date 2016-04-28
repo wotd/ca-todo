@@ -1,16 +1,23 @@
 =begin
 List Class:
-  - Create a list
-  - Add task to list
-  - Show all tasks
+  - Create a list - done
+  - Add task to list - done
+  - Show all tasks - done
   - Read a task from a file
   - Write a list to a file
   - Delete a task
   - Update a task
 
 Task Class:
-  - Create a task item
+  - Create a task item - done
 =end
+
+#Modules
+module Menu
+  def menu
+    
+  end
+end
 
 #Classes
 class List
@@ -22,6 +29,10 @@ class List
 
   def add(task)
     @all_tasks << task
+  end
+
+  def show
+    all_tasks
   end
 end
 
@@ -36,5 +47,5 @@ end
 
 #Program starts here
 my_list = List.new
-
-my_list.add("temp")
+my_list.add(Task.new('Make tosts'))
+puts my_list.show
