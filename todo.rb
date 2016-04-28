@@ -14,10 +14,18 @@ Task Class:
 
 #Classes
 class List
+  attr_reader :all_tasks
 
+  def initialize
+    @all_tasks = []
 end
 
 class Task
+  attr_reader :task_description
+
+  def initialize(task_description)
+    @task_description = task_description
+  end
 
 end
 
