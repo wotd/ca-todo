@@ -19,6 +19,10 @@ class List
   def initialize
     @all_tasks = []
   end
+
+  def add(task)
+    @all_tasks << task
+  end
 end
 
 class Task
@@ -32,3 +36,5 @@ end
 
 #Program starts here
 my_list = List.new
+
+my_list.add("temp")
