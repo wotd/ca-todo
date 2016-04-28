@@ -18,6 +18,7 @@ class List
 
   def initialize
     @all_tasks = []
+  end
 end
 
 class Task
