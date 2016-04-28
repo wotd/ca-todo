@@ -19,6 +19,7 @@ module Menu
     This menu will help you use the Task List System
     1) Add
     2) Show
+    3) Write to file
     Q) Quit "
   end
   def show
@@ -58,6 +59,9 @@ class Task
     @task_description = task_description
   end
 
+  def to_s
+    task_description
+  end
 end
 
 #Program starts here
@@ -69,7 +73,7 @@ puts 'Please choose from the following list:'
 until (user_input = prompt(show).downcase) == 'q' do
   case user_input
     when "1"
-      my_list.add(Task.new("Make sandwitch!"))
+      my_list.add(Task.new("Make sandwich!"))
     when "2"
       puts my_list.show
     else
