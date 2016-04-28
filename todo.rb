@@ -15,7 +15,22 @@ Task Class:
 #Modules
 module Menu
   def menu
-    
+    " Welcome to the TodoList Program!
+    This menu will help you use the Task List System
+    1) Add
+    2) Show
+    Q) Quit "
+  end
+  def show
+    menu
+  end
+end
+
+module Promptable
+  def prompt(message = "What would you like to do?" , prompt = ':> ')
+    puts message
+    print prompt
+    gets.chomp
   end
 end
 
@@ -46,6 +61,20 @@ class Task
 end
 
 #Program starts here
+include Menu
+include Promptable
+
 my_list = List.new
-my_list.add(Task.new('Make tosts'))
-puts my_list.show
+puts 'Please choose from the following list:'
+until (user_input = prompt(show).downcase) == 'q' do
+  case user_input
+    when "1"
+      my_list.add(Task.new("Make sandwitch!"))
+    when "2"
+      puts my_list.show
+    else
+      puts 'Sorry, I did not understand'
+  end
+end
+
+puts 'Outro - Thanks for using the menu system!'
